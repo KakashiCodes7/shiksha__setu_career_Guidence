@@ -35,9 +35,28 @@
 
 4. **Import the Database**:
    - Open `phpMyAdmin` in the browser (`http://localhost/phpmyadmin/`).
-   - Create a new database named `shiksha_setu`.
-   - Import the `shiksha_setu.sql` file from the project folder.
+   - Execute the following SQL commands to create the necessary databases and tables:
+     ```sql
+     CREATE DATABASE career_db;
+     USE career_db;
+     CREATE TABLE users (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+         fullname VARCHAR(100) NOT NULL,
+         email VARCHAR(100) NOT NULL UNIQUE,
+         username VARCHAR(50) NOT NULL UNIQUE,
+         password VARCHAR(255) NOT NULL
+     );
 
+     CREATE DATABASE student;
+     USE student;
+     CREATE TABLE users (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+         fullname VARCHAR(100) NOT NULL,
+         email VARCHAR(100) NOT NULL UNIQUE,
+         username VARCHAR(50) NOT NULL UNIQUE,
+         password VARCHAR(255) NOT NULL
+     );
+     ```
 5. **Run the Application**:
    - Open a web browser and go to:
      ```
